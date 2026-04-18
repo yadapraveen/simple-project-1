@@ -1,11 +1,25 @@
-name: Hello GitHub Actions
+name: Run Multiple Shell Commands
 
 on: push
 
 jobs:
-  hello:
+  debug-runner:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Hello Message
-        run: echo "Hello GitHub Actions"
+      - name: Run multiple Linux commands
+        run: |
+          echo "Current Date and Time:"
+          date
+
+          echo "Current Working Directory:"
+          pwd
+
+          echo "List of Files:"
+          ls -la
+
+          echo "Current User:"
+          whoami
+
+          echo "OS Information:"
+          uname -a
